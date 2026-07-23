@@ -1,0 +1,80 @@
+@use "./reset";
+@use "./variables" as *;
+@use "./mixins" as *;
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $color-text;
+  background-color: $color-bg;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ---------------------------------------------------------------------------
+// Shared, cross-cutting utility classes. Component-specific styling stays in
+// each component's own scoped <style> block; only truly reusable page-level
+// utilities live here.
+// ---------------------------------------------------------------------------
+
+.page {
+  padding: $space-8;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.page-header {
+  @include flex-between;
+  margin-bottom: $space-6;
+  flex-wrap: wrap;
+  gap: $space-4;
+}
+
+.page-title {
+  font-size: $font-size-2xl;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  color: $color-text-muted;
+  margin-top: $space-1;
+}
+
+.empty-state {
+  @include surface;
+  @include flex-center;
+  flex-direction: column;
+  gap: $space-2;
+  padding: $space-10;
+  color: $color-text-muted;
+  text-align: center;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  padding: 2px $space-3;
+  border-radius: $radius-full;
+  font-size: $font-size-xs;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  margin-bottom: $space-4;
+}
+
+.form-label {
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: $color-gray-700;
+}
+
+.form-error {
+  font-size: $font-size-xs;
+  color: $color-danger;
+}

@@ -1,0 +1,43 @@
+// Centers children both axes with flexbox.
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Common "space items apart on a row" pattern used across headers/toolbars.
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Standard elevated surface used by cards, panels and dropdowns.
+@mixin surface($radius: $radius-md) {
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  box-shadow: $shadow-sm;
+}
+
+// Truncates overflowing text to a single line with an ellipsis.
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Applies min-width breakpoint styles; used for the sidebar collapsing on
+// small screens.
+@mixin respond-up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Generates a color-variant pill (used by status/priority badges): a tinted
+// background with matching darker text, from a single base color.
+@mixin badge-variant($fg, $bg) {
+  color: $fg;
+  background-color: $bg;
+}
