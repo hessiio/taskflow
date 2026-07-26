@@ -1,4 +1,6 @@
 // Centers children both axes with flexbox.
+@use "./variables" as *;
+
 @mixin flex-center {
   display: flex;
   align-items: center;
