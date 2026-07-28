@@ -27,7 +27,7 @@ const router = createRouter({
         },
         {
           path: "/projects/:id",
-          name: "projects",
+          name: "project-detail",
           props: true,
           component: import("@/views/ProjectDetailView.vue"),
         },
@@ -36,7 +36,7 @@ const router = createRouter({
     {
       path: "/:pathMatch(.*)*",
       name: "not-found",
-      component: { template: "<div />" },
+      component: import("@/views/NotFoundView.vue"),
     },
   ],
 });
